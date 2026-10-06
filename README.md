@@ -20,6 +20,8 @@ The launcher mirrors the official OpenLLM CLI's client registry ([`src/clients/r
 
 "Session" clients are launched per task with a temporary overlay under `~/.openllm/run/<client>/<pid>/`; the user's own client configuration is never modified. Always-on clients are a different kind of action and are out of scope for this starter; run them directly with `openllm chatgpt` / `openllm raycast` after reading the official docs, if you actually want them.
 
+**Install the full set.** This starter is designed and verified as a complete five-client setup. When setup is approved, install all session clients — not only the one you plan to launch first. `scripts/doctor.sh` exits non-zero until every session client is present, and that is the gate the workflow treats as "ready."
+
 ## One-line handoff to Manus
 
 Paste this into a Manus task (replace the hostname/path only if this repo is forked):

@@ -70,6 +70,6 @@ done
 if [ "$fail" -eq 0 ]; then
   printf 'Binary preflight passed. Pairing, provider availability, MCP and inference are NOT verified.\n'
 else
-  printf 'Preflight incomplete. Ask before installing or changing software.\n' >&2
+  printf 'Preflight incomplete: this starter requires the full session-client set (claude, codex, grok, hermes, opencode) to be installed. Complete the missing installs with the user'"'"'s permission before launching. Ask before installing or changing software.\n' >&2
 fi
 exit "$fail"
