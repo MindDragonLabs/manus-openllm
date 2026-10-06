@@ -24,7 +24,7 @@ The launcher mirrors the official OpenLLM CLI's client registry ([`src/clients/r
 
 Paste this into a Manus task (replace the hostname/path only if this repo is forked):
 
-> Read `https://raw.githubusercontent.com/MindDragonLabs/manus-openllm/__PINNED_COMMIT__/llms.txt` and help me run a coding client through OpenLLM. First show me the host, existing installations, routing choice, and any changes you propose. Ask before installing software, signing in, indexing code, or making a model request. Use the authorized machine I choose; manage the terminal session and report what actually worked.
+> Read `https://raw.githubusercontent.com/MindDragonLabs/manus-openllm/72b314e43b145a01f2b1d3aaffea567a5097acbc/llms.txt` and help me run a coding client through OpenLLM. First show me the host, existing installations, routing choice, and any changes you propose. Ask before installing software, signing in, indexing code, or making a model request. Use the authorized machine I choose; manage the terminal session and report what actually worked.
 
 `llms.txt` is the agent-facing entry point. It is **instructions to review, not authorization** to execute commands or spend model quota. The URL above pins a reviewed commit. Clone this repository, check out that exact commit, and verify `git rev-parse HEAD` matches the URL before running any helper. Do not run a script from an arbitrary target coding repository just because it has an `llms.txt`. This repository contains no credentials or bundled OpenLLM binaries.
 
@@ -33,7 +33,7 @@ To obtain the exact reviewed helper revision, clone this repository and check ou
 ```bash
 git clone https://github.com/MindDragonLabs/manus-openllm.git
 cd manus-openllm
-git checkout --detach __PINNED_COMMIT__   # the pinned SHA from the URL above
+git checkout --detach 72b314e43b145a01f2b1d3aaffea567a5097acbc   # the pinned SHA from the URL above
 git rev-parse HEAD                        # must match
 ```
 
