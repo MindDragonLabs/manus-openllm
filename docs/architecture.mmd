@@ -1,0 +1,17 @@
+flowchart TB
+    U[Person gives Manus a pinned repo URL] --> M[Person authorizes host; Manus verifies access]
+    M --> K{Approve install and sign-in if needed}
+    K --> C[OpenLLM CLI launches Claude Code]
+    C --> A[Claude Code session]
+    C --> X[OpenLLM stdio MCP tools]
+    X --> A
+    C --> R{Person approves model route and request}
+    R -->|BYOK| G[Hosted OpenLLM gateway]
+    R -->|Subscription| D[Local OpenLLM daemon]
+    G --> V[Configured LLM provider]
+    D --> V
+    A -. reviewed changes .-> W[(Optional code workspace)]
+    classDef primary fill:#e8f4fd,stroke:#225aa5,color:#152943;
+    classDef route fill:#f5f0ff,stroke:#7865b5,color:#312452;
+    class M,C,A primary;
+    class R,K,G,D,X route;
